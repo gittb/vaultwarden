@@ -1,0 +1,20 @@
+# Vaultwarden — plugin-drafted. bringup: compose-pull (constructed root compose pulls vaultwarden/server,
+# single-service SQLite, SIGNUPS_ALLOWED=true). blocker: none (RUNNABLE) — self-register.
+# NOTE: add-login-item types a THROWAWAY password into the vault (captured in the recording — fine, it's fake).
+up:
+  url: http://localhost:8000
+  health: /
+  ready_timeout_s: 300
+journeys:
+  - name: register-new-account
+    goal: A brand-new visitor opens the web vault, goes to "Create account", and registers with an email and a master password, then proceeds into the app.
+    success: The vault is open showing the empty-vault state with the "New"/"Add item" button and the account's email visible in the top-right account menu.
+  - name: add-login-item
+    goal: A newly-registered, signed-in user creates a new Login item in their vault, giving it a name, a username, and a throwaway password value.
+    success: The vault item list shows the newly created Login entry by its name, with a username displayed beneath it.
+  - name: add-secure-note
+    goal: A newly-registered, signed-in user adds a new Secure Note item to their vault with a name and some note body text.
+    success: The vault item list shows the newly created Secure Note entry by its name, marked with the note (sticky-note) type icon.
+  - name: create-folder
+    goal: A newly-registered, signed-in user opens the folder controls and creates a new folder to organize vault items.
+    success: The left-hand Folders section of the vault lists the newly created folder by its name.
