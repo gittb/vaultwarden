@@ -145,3 +145,5 @@ The maintainers work together to set the direction for the project, focusing on 
 
 This project was known as Bitwarden_RS and has been renamed to separate itself from the official Bitwarden server in the hopes of avoiding confusion and trademark/branding issues.<br>
 Please see [#1642 - v1.21.0 release and project rename to Vaultwarden](https://github.com/dani-garcia/vaultwarden/discussions/1642) for more explanation.
+
+<!-- preuser-eval -->
